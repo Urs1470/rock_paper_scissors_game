@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>RPS demo-game</title>
 </head>
 <body>
+    <div class="content">
+
+        <h1>Play a game</h1>
+        <h3><p>To start the game you have to click on one of the options</p>
+        <p>You will play against the computer and will win who will accumulate the first 5 points</p>
+        </h3>
+
+        <div class="container">
+            <button class="btn1">Paper</button>
+            <button class="btn2">Scissor</button>
+            <button class="btn3">Rock</button>
+        </div>
+        
+        <div class="resultAll">Result is : <span class="result"></span></div>
+        <div class="score">Current score :  
+            <p>
+                player score : <span class="pscore"></span> |  computer score : <span class="cscore"></span></div>
+            </p> 
+        
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

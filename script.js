@@ -1,3 +1,4 @@
+// get the computer choice
 function getComputerChoice() {
     choices = ['rock','scissor','paper'];
     randomChoice = Math.floor(Math.random()*choices.length);
@@ -5,7 +6,97 @@ function getComputerChoice() {
     return choiceString;
 }
 
-function playRound(playerSelection = prompt('Enter your choice!'), computerSelection = getComputerChoice()) {
+
+// DOM events and selectors
+let paper = document.querySelector('.btn1');
+let scissor = document.querySelector('.btn2');
+let rock = document.querySelector('.btn3');
+let result = document.querySelector('.result');
+let pscore = document.querySelector('.pscore');
+let cscore = document.querySelector('.cscore');
+let player = 0;
+let computer = 0;
+
+paper.addEventListener("click", function (r) {
+    result.textContent = ` ${playRound('paper')}`
+    r = result.textContent = ` ${playRound('paper')}`
+    if(r.includes('You win')) {
+        player++;
+        if(player === 5) {
+            window.alert('You win')
+            window.location.reload();
+        } else {
+            pscore.textContent = `${player} `
+        }
+    } else if(r.includes('You lose')) {
+        computer++;
+        if(computer === 5) {
+            window.alert('You Lose')
+            window.location.reload();
+        } else {
+            cscore.textContent = `${computer}`
+        }
+    } else {
+        pscore.textContent = `${player}`
+        cscore.textContent = `${computer}`
+    }
+})
+
+scissor.addEventListener("click", function (r) {
+    result.textContent = ` ${playRound('scissor')}`
+    r = result.textContent = ` ${playRound('scissor')}`
+    if(r.includes('You win')) {
+        player++;
+        if(player === 5) {
+            window.alert('You win')
+            window.location.reload();
+        } else {
+            pscore.textContent = `${player} `
+        }
+    } else if(r.includes('You lose')) {
+        computer++;
+        if(computer === 5) {
+            window.alert('You Lose')
+            window.location.reload();
+        } else {
+            cscore.textContent = `${computer}`
+        }
+    } else {
+        pscore.textContent = `${player}`
+        cscore.textContent = `${computer}`
+    }
+})
+
+rock.addEventListener("click", function (r) {
+    result.textContent = ` ${playRound('rock')}`
+    r = result.textContent = ` ${playRound('rock')}`
+    if(r.includes('You win')) {
+        player++;
+        if(player === 5) {
+            window.alert('You win')
+            window.location.reload();
+        } else {
+            pscore.textContent = `${player} `
+        }
+    } else if(r.includes('You lose')) {
+        computer++;
+        if(computer === 5) {
+            window.alert('You Lose')
+            window.location.reload();
+        } else {
+            cscore.textContent = `${computer}`
+        }
+    } else {
+        pscore.textContent = `${player}`
+        cscore.textContent = `${computer}`
+    }
+})
+
+
+
+
+// return the result of one round
+function playRound(playerSelection, computerSelection = getComputerChoice()) {
     // your code here!
     playerSelection = playerSelection.toLowerCase()
     if (playerSelection == computerSelection) {
@@ -25,75 +116,7 @@ function playRound(playerSelection = prompt('Enter your choice!'), computerSelec
     } else {
         return "Your input is not a choice!"
     }
+
   } 
-   
-  function game() {
-    let player = 0;
-    let computer = 0;
+  
 
-    let round1 = playRound();
-    if(round1.includes('You win')) {
-        player++;
-        console.log("Round1 : ",round1)
-    } else if(round1.includes('You lose')) {
-        computer++;
-        console.log("Round1 : ",round1)
-    } else {
-        console.log("Round1 : ",round1)
-    }
-    
-    let round2 = playRound();
-    if(round2.includes('You win')) {
-        player++;
-        console.log("Round2 : ",round2)
-    } else if(round2.includes('You lose')) {
-        computer++;
-        console.log("Round2 : ",round2)
-    } else {
-        console.log("Round2 : ",round2)
-    }
-
-    let round3 = playRound();
-    if(round3.includes('You win')) {
-        player++;
-        console.log("Round3 : ",round3)
-    } else if(round3.includes('You lose')) {
-        computer++;
-        console.log("Round3 : ",round3)
-    } else {
-        console.log("Round3 : ",round3)
-    }
-
-    let round4 = playRound();
-    if(round4.includes('You win')) {
-        player++;
-        console.log("Round4 : ",round4)
-    } else if(round4.includes('You lose')) {
-        computer++;
-        console.log("Round4 : ",round4)
-    } else {
-        console.log("Round4 : ",round4)
-    }
-
-    let round5 = playRound();
-    if(round5.includes('You win')) {
-        player++;
-        console.log("Round5 : ",round5)
-    } else if(round5.includes('You lose')) {
-        computer++;
-        console.log("Round5 : ",round5)
-    } else {
-        console.log("Round5 : ",round5)
-    }
-
-    if(player > computer) {
-        return `You Win Game!!! Score ${player}|${computer} `
-    } else if(player < computer) {
-        return `You Lose Game!!! Score ${player}|${computer} `
-    } else {
-        return `It's a Equal Game!!! Score ${player}|${computer} `
-    }
-    
-  }
-
-  console.log(game())
